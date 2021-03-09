@@ -40,7 +40,7 @@ app.post<any, any, LoginArgs>("/login", (req, res) => {
   res.status(400);
   res.json({ message: "Login succesfully" });
   const token = jwt.sign(
-    { username: user.username, username: user.password },
+    { username: user.username, password: user.password },
     SECRET_KEY
   );
   res.json({ token });
